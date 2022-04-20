@@ -8,7 +8,7 @@ weekdays2 = ['fri', 'sat', 'sun']
 filename = "file1.txt"
 
 @pytest.fixture
-def setup01():
+def setup01():  # fixture with same name will override conftest
     weekdays1.append("thur")
     yield weekdays1
     print("\n After yield in setup01 fixture \n")
