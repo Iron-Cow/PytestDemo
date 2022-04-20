@@ -21,3 +21,23 @@ def setup02():
     yield wk2
     print("\n After yield in setup02 fixture \n")
 
+@pytest.fixture()
+def setup04(request):
+    mon = getattr(request.module, "months") # getting variable from module
+    print("\n in Fixture  setup04")
+    print("\n Fixture Scope: " + str(request.scope))
+    print("\n Calling function: " + str(request.function.__name__))
+    print("\n Calling module: " + str(request.module.__name__))
+    mon.append("A")
+
+    """
+     in Fixture  setup04
+
+     Fixture Scope: function
+
+     Calling function: test_check_request
+
+     Calling module: Pytest_topics.py_fixtures.text_fixtures04
+    """
+
+
