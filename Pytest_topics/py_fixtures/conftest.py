@@ -1,5 +1,3 @@
-import os
-
 import pytest
 
 pytest.weekdays1 = ['mon', 'tue', 'wed']
