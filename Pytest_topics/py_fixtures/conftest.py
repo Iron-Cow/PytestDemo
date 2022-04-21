@@ -40,4 +40,12 @@ def setup04(request):
      Calling module: Pytest_topics.py_fixtures.text_fixtures04
     """
 
+@pytest.fixture()
+def setup05():
+    def get_structure(name):
+        if name == "list":
+            return [1, 2, 3]
+        elif name == "tuple":
+            return (1, 3, 4)
 
+    return get_structure  # return function to use multiple times in one test
