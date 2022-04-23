@@ -13,9 +13,12 @@ def pytest_configure():  # make it global
     pytest.AMT = 0
 
 
-@scenario(FEATURE_FILE, "Withdrawal of money")
-def test_withdrawal():  # test_bdd101.py::test_withdrawal <- venv/lib/python3.8/site-packages/pytest_bdd/scenario.py End of Withdrawal test
-    print("End of Withdrawal test")
+scenarios(FEATURE_FILE)  # alternative to single scenarios (commented)
+
+
+# @scenario(FEATURE_FILE, "Withdrawal of money")
+# def test_withdrawal():  # test_bdd101.py::test_withdrawal <- venv/lib/python3.8/site-packages/pytest_bdd/scenario.py End of Withdrawal test
+#     print("End of Withdrawal test")
 
 
 @given("The account is 100")
@@ -36,9 +39,9 @@ def final_balance():
 ###
 
 
-@scenario(FEATURE_FILE, "Removal of items from set")
-def test_removal_of_set_items():
-    print("End of removing test")
+# @scenario(FEATURE_FILE, "Removal of items from set")
+# def test_removal_of_set_items():
+#     print("End of removing test")
 
 
 @given("A set of 3 fruits", target_fixture="my_set")  # returns value, works as fixture for next steps
