@@ -17,6 +17,20 @@ def setup_set() -> set:
     return countries
 
 
+@given("A data type set")
+def check_set_type(setup_set):
+    print("In background check data type")
+    if not isinstance(setup_set, set):
+        pytest.xfail("The type is not set type")
+
+
+@given("The set is not empty")
+def check_set_not_empty(setup_set: set):
+    print("In background check not empty set")
+    if len(setup_set) == 0:
+        pytest.xfail("The set of elements are empty")
+
+
 @given("A sent with 3 elements", target_fixture="setup_set1")
 def set_of_elems(setup_set: set):
     if len(setup_set) == 0:
