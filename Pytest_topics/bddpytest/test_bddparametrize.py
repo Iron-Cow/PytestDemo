@@ -1,5 +1,4 @@
-import pytest
-from pytest_bdd import scenario, scenarios, given, when, then, parsers
+from pytest_bdd import scenarios, given, when, then, parsers
 from pathlib import Path
 
 feature_file_dir = "my_features"
