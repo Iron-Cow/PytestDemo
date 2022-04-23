@@ -17,3 +17,34 @@ Fixtures are created when firs requested by a test and are destroyed based on th
 * `module`: the fixture is destroyed during teardown of the last test in the module
 * `package`: the fixture is destroyed during teardown of the last test in the package
 * `session`: the fixture is destroyed at the end of the test session
+
+---
+
+## `BDD` - Behaviour Driven Development
+`python-bdd`
+
+
+>Analysts or Prod. owners write scenarios. 
+
+*Feature*: Banking Transactions
+>Test pertaining to banking transactions of withdraw and deposit
+
+*Scenario*: Withdrawal of money
+
+>*Given*: Account balance is 100$
+> 
+>*When*: The Account Holder withdraws 20$
+>
+>*Then*: The account balance should be 80$
+
+### `Python-BDD` terms and rules:
+
+* `python-dbb` - not stand-alone framework
+* Gherkin - `.feature` file
+* given, when, then, etc - step included to step definition
+* Only 1 feature per `.feature` file
+* Multiple scenarios allowed in feature file
+* Test modules naming is same as pytest (test_*.py)
+* Project structure for `pytest-bdd` is flexible
+* Step definition module name can be different to feature file names
+* Scenarios **must** be explicitly declared in test modules
